@@ -3,8 +3,7 @@
 **Predicting severe damage to buildings in Ramechhap district after the 2015 Gorkha Earthquake**
 
 ## Overview
-This project uses real post-disaster survey data (~260,000 buildings) from the DrivenData competition "Richter's Predictor".  
-I built a SQLite database from raw CSV files, performed data wrangling, EDA, and developed classification models to identify buildings at high risk of severe damage (damage grade 3).
+End-to-end classification project using DrivenData survey data. Built SQLite database from raw CSVs, performed wrangling, EDA, and multiple models with hyperparameter tuning. Includes decision tree visualization, model comparison, and ethical/demographic analysis.
 
 Focus district: **Ramechhap**
 
@@ -17,21 +16,23 @@ Focus district: **Ramechhap**
 
 ## Model Performance
 
-| Model                  | Train Accuracy | Test Accuracy | Test F1 Score |
-|------------------------|----------------|---------------|---------------|
-| Baseline               | 0.6654         | 0.6654        | -             |
-| Logistic Regression    | 0.6681         | 0.6670        | 0.1909        |
-| Decision Tree          | 0.7700         | 0.7655        | 0.6012        |
-| **Random Forest**      | 0.6726         | 0.6652        | 0.6173        |
+| Model                    | Test Accuracy | Notes                          |
+|--------------------------|---------------|--------------------------------|
+| Baseline                 | 0.6654        | Majority class                 |
+| Logistic Regression      | 0.6670        | Good interpretability          |
+| **Decision Tree (tuned)**| **0.7695**    | Best overall performance       |
+| Random Forest            | 0.6652        | Strong F1 score                |
 
-**Best Model**: Decision Tree (Test Accuracy: 0.7655)
+**Best Model**: Decision Tree (`max_depth=12`, Test Accuracy = 0.7695)
 
 ## Covered in the project
 - Building relational databases from raw flat files (ETL)
 - SQL joins and querying
 - Data cleaning and smart feature selection (multicollinearity + cardinality handling)
-- Model iteration and comparison
-- Interpretable ML (odds ratios) and ensemble methods
+- Classification models: Logistic Regression, Decision Tree (with max_depth tuning), Random Forest
+- Hyperparameter tuning and overfitting analysis
+- Feature importance (Gini & odds ratios)
+- Ethical considerations in disaster and demographic modeling
 
 ## How to Run
 1. Place `train_values.csv` and `train_labels.csv` in the project folder
