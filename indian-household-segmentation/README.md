@@ -46,5 +46,7 @@ Run cells sequentially in Jupyter Notebook.
 ### Section 4 — Dash app
 Run the final Dash cell. The app renders inline in the notebook output.
 It is also accessible in any browser tab at:
+
 http://127.0.0.1:8050/
+
 The server runs as long as the cell shows `[*]`. Stop it with the Jupyter Interrupt button.
