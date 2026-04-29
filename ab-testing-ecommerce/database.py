@@ -2,6 +2,7 @@
 Data layer: reads and shapes raw data from CSV.
 """
 
+import os
 import pandas as pd
 from country_converter import CountryConverter
 
@@ -20,8 +21,11 @@ class SessionRepository:
         Raw session data loaded into memory.
     """
 
-    def __init__(self, filepath="data/ab_test_sessions.csv"):
-        self.df = pd.read_csv(filepath, parse_dates=["timestamp"])
+    def __init__(self, filepath=None):
+    if filepath is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        filepath = os.path.join(base_dir, "data", "ab_test_sessions.csv")
+    self.df = pd.read_csv(filepath, parse_dates=["timestamp"])
 
     def get_raw(self):
         """Return the full raw DataFrame.
