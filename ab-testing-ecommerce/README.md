@@ -3,6 +3,8 @@
 ## Overview
 A complete A/B testing pipeline for a fictional online retailer (TechCart). The experiment tests whether a redesigned product detail page (Version B) increases the Add-to-Cart rate compared to the original (Version A).
 
+**Live app:** [View on Streamlit Cloud](https://aj-mh-data-science-machine-learn-ab-testing-ecommerceapp-5hn6ui.streamlit.app/)
+
 ## Project Structure
 
 ```text
