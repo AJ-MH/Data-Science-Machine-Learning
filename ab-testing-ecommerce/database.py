@@ -22,10 +22,10 @@ class SessionRepository:
     """
 
     def __init__(self, filepath=None):
-    if filepath is None:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        filepath = os.path.join(base_dir, "data", "ab_test_sessions.csv")
-    self.df = pd.read_csv(filepath, parse_dates=["timestamp"])
+        if filepath is None:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            filepath = os.path.join(base_dir, "data", "ab_test_sessions.csv")
+        self.df = pd.read_csv(filepath, parse_dates=["timestamp"])
 
     def get_raw(self):
         """Return the full raw DataFrame.
