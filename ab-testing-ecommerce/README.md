@@ -4,6 +4,8 @@
 A complete A/B testing pipeline for a fictional online retailer (TechCart). The experiment tests whether a redesigned product detail page (Version B) increases the Add-to-Cart rate compared to the original (Version A).
 
 ## Project Structure
+
+```text
 ab-testing-ecommerce/
 ├── ab_testing_ecommerce.ipynb  # Main analysis notebook (6 sections)
 ├── generate_data.py            # Synthetic data generator
@@ -13,6 +15,7 @@ ab-testing-ecommerce/
 ├── data/
 │   └── ab_test_sessions.csv    # 4,000 synthetic user sessions
 └── README.md
+```
 
 ## Key Results
 | Metric | Value |
@@ -32,6 +35,7 @@ python generate_data.py
 ```
 
 **Step 2 — Open the notebook:**
+
 Start Jupyter from Anaconda Prompt and open `ab_testing_ecommerce.ipynb`.
 
 **Step 3 — Launch the dashboard:**
